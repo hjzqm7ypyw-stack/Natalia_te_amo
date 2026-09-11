@@ -1,18 +1,16 @@
 /* =========================
-   EXIBIR BALÃO SURPRESA
+   EXIBIR SURPRESA
 ========================== */
 function mostrarSurpresa() {
   const surpresa = document.getElementById("surpresa");
+  const chatBody = document.getElementById("chatBody");
 
   if (surpresa.style.display === "block") {
     surpresa.style.display = "none";
   } else {
     surpresa.style.display = "block";
     setTimeout(() => {
-      surpresa.scrollIntoView({
-        behavior: "smooth",
-        block: "end"
-      });
+      chatBody.scrollTop = chatBody.scrollHeight;
     }, 100);
   }
 }
@@ -52,7 +50,7 @@ function criarFotoFlutuante() {
   foto.alt = "";
   foto.setAttribute("aria-hidden", "true");
 
-  foto.style.left = Math.random() * 92 + "vw";
+  foto.style.left = Math.random() * 90 + "vw";
   foto.style.animationDuration = (10 + Math.random() * 8) + "s";
 
   foto.style.setProperty("--rotacao-inicial", (-12 + Math.random() * 24) + "deg");
@@ -61,7 +59,7 @@ function criarFotoFlutuante() {
 
   foto.style.setProperty("--movimento", (-35 + Math.random() * 70) + "px");
   foto.style.setProperty("--movimento-final", (-70 + Math.random() * 140) + "px");
-  foto.style.setProperty("--opacidade", (0.28 + Math.random() * 0.28));
+  foto.style.setProperty("--opacidade", (0.35 + Math.random() * 0.25));
 
   container.appendChild(foto);
 
