@@ -1,5 +1,5 @@
 /* =========================
-   BOTÃO SURPRESA
+   EXIBIR BALÃO SURPRESA
 ========================== */
 function mostrarSurpresa() {
   const surpresa = document.getElementById("surpresa");
@@ -11,7 +11,7 @@ function mostrarSurpresa() {
     setTimeout(() => {
       surpresa.scrollIntoView({
         behavior: "smooth",
-        block: "center"
+        block: "end"
       });
     }, 100);
   }
