@@ -14,64 +14,67 @@
 
 <body>
 
-  <!-- FUNDO COM CORAÇÕES E FOTOS -->
+  <!-- FUNDO COM CORAÇÕES E FOTOS FLUTUANTES -->
   <div class="hearts" id="hearts"></div>
 
-  <!-- CONTEÚDO -->
+  <!-- CONTAINER DO CHAT (ESTILO WHATSAPP) -->
   <main class="container">
-    <section class="card">
+    <section class="chat-container">
 
-      <div class="coracao">❤️</div>
+      <!-- CABEÇALHO DO CHAT -->
+      <header class="chat-header">
+        <div class="profile-pic">❤️</div>
+        <div class="chat-info">
+          <h2>Natália ✨</h2>
+          <span>online</span>
+        </div>
+      </header>
 
-      <h1>Para Natália</h1>
+      <!-- CORPO DAS MENSAGENS -->
+      <div class="chat-body" id="chatBody">
 
-      <p class="subtitulo">
-        Uma pequena surpresa para uma pessoa muito especial. 💕
-      </p>
-
-      <!-- SEÇÃO EM BALÕES DE CHAT -->
-      <div class="mensagem">
-
-        <div class="balao" style="animation-delay: 0.2s;">
-          Existem pessoas que aparecem em nossas vidas e, de alguma forma, tornam tudo mais bonito.
+        <div class="balao-whatsapp" style="animation-delay: 0.2s;">
+          <p>Existem pessoas que aparecem em nossas vidas e, de alguma forma, tornam tudo mais bonito.</p>
+          <span class="hora">12:00</span>
         </div>
 
-        <div class="balao" style="animation-delay: 0.4s;">
-          <strong>Você é uma dessas pessoas. ✨</strong>
+        <div class="balao-whatsapp" style="animation-delay: 0.4s;">
+          <p><strong>Você é uma dessas pessoas. ✨</strong></p>
+          <span class="hora">12:00</span>
         </div>
 
-        <div class="balao" style="animation-delay: 0.6s;">
-          Talvez eu não consiga encontrar as palavras perfeitas para explicar o quanto você significa para mim. Mas quero que saiba que cada sorriso seu, cada conversa e cada momento ao seu lado se tornou uma lembrança que guardo com muito carinho.
+        <div class="balao-whatsapp" style="animation-delay: 0.6s;">
+          <p>Talvez eu não consiga encontrar as palavras perfeitas para explicar o quanto você significa para mim. Mas quero que saiba que cada sorriso seu, cada conversa e cada momento ao seu lado se tornou uma lembrança que guardo com muito carinho.</p>
+          <span class="hora">12:01</span>
         </div>
 
-        <div class="balao" style="animation-delay: 0.8s;">
-          Se eu pudesse fazer um pedido, seria simples: que a vida continue nos dando motivos para sorrir, conversar, sonhar e criar momentos juntos.
+        <div class="balao-whatsapp" style="animation-delay: 0.8s;">
+          <p>Se eu pudesse fazer um pedido, seria simples: que a vida continue nos dando motivos para sorrir, conversar, sonhar e criar momentos juntos.</p>
+          <span class="hora">12:01</span>
         </div>
 
-        <div class="balao" style="animation-delay: 1.0s;">
-          <strong>Porque, entre tantas pessoas no mundo, eu sou muito feliz por ter encontrado você. ❤️</strong>
+        <div class="balao-whatsapp" style="animation-delay: 1.0s;">
+          <p><strong>Porque, entre tantas pessoas no mundo, eu sou muito feliz por ter encontrado você. ❤️</strong></p>
+          <span class="hora">12:02</span>
+        </div>
+
+        <!-- MENSAGEM OCULTA / SURPRESA DA CONVERSA -->
+        <div class="balao-whatsapp surpresa-balao" id="surpresa">
+          <p>"Você é uma das partes mais bonitas da minha história. E, se depender de mim, ainda temos muitos capítulos incríveis para escrever juntos. ❤️"</p>
+          <span class="hora">12:03 <span class="visto">✓✓</span></span>
         </div>
 
       </div>
 
-      <button class="botao" onclick="mostrarSurpresa()">
-        💌 Clique aqui para uma surpresa
-      </button>
-
-      <div id="surpresa">
-        <p>
-          "Você é uma das partes mais bonitas da minha história. E, se depender de mim, ainda temos muitos capítulos incríveis para escrever juntos. ❤️"
-        </p>
-      </div>
-
-      <div class="assinatura">
-        Com todo meu carinho,<br>
-        <strong>Gabryel seu amor ❤️</strong>
-      </div>
-
-      <div class="data">
-        Feito especialmente para você ✨
-      </div>
+      <!-- RODAPÉ E BOTÃO DE INTERAÇÃO -->
+      <footer class="chat-footer">
+        <button class="botao-zap" onclick="mostrarSurpresa()">
+          💌 Clique aqui para uma surpresa
+        </button>
+        <div class="assinatura">
+          Com todo meu carinho, <strong>Gabryel seu amor ❤️</strong>
+        </div>
+      </footer>
 
     </section>
   </main>
