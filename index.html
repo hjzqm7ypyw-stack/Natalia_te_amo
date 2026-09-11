@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#4b001d">
+  <meta name="theme-color" content="#efeae2">
 
-  <title>Para Natália ❤️</title>
+  <title>WhatsApp Natália ❤️</title>
 
   <!-- Link para o CSS Externo -->
   <link rel="stylesheet" href="style.css">
@@ -17,67 +17,75 @@
   <!-- FUNDO COM CORAÇÕES E FOTOS FLUTUANTES -->
   <div class="hearts" id="hearts"></div>
 
-  <!-- CONTAINER DO CHAT (ESTILO WHATSAPP) -->
-  <main class="container">
-    <section class="chat-container">
+  <!-- TELA PRINCIPAL DO WHATSAPP -->
+  <div class="whatsapp-app">
 
-      <!-- CABEÇALHO DO CHAT -->
-      <header class="chat-header">
-        <div class="profile-pic">❤️</div>
-        <div class="chat-info">
+    <!-- CABEÇALHO SUPERIOR -->
+    <header class="whatsapp-header">
+      <div class="header-user">
+        <div class="avatar">❤️</div>
+        <div class="user-info">
           <h2>Natália ✨</h2>
           <span>online</span>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <!-- CORPO DAS MENSAGENS -->
-      <div class="chat-body" id="chatBody">
+    <!-- ÁREA DAS MENSAGENS -->
+    <main class="whatsapp-messages" id="chatBody">
 
-        <div class="balao-whatsapp" style="animation-delay: 0.2s;">
-          <p>Existem pessoas que aparecem em nossas vidas e, de alguma forma, tornam tudo mais bonito.</p>
-          <span class="hora">12:00</span>
-        </div>
-
-        <div class="balao-whatsapp" style="animation-delay: 0.4s;">
-          <p><strong>Você é uma dessas pessoas. ✨</strong></p>
-          <span class="hora">12:00</span>
-        </div>
-
-        <div class="balao-whatsapp" style="animation-delay: 0.6s;">
-          <p>Talvez eu não consiga encontrar as palavras perfeitas para explicar o quanto você significa para mim. Mas quero que saiba que cada sorriso seu, cada conversa e cada momento ao seu lado se tornou uma lembrança que guardo com muito carinho.</p>
-          <span class="hora">12:01</span>
-        </div>
-
-        <div class="balao-whatsapp" style="animation-delay: 0.8s;">
-          <p>Se eu pudesse fazer um pedido, seria simples: que a vida continue nos dando motivos para sorrir, conversar, sonhar e criar momentos juntos.</p>
-          <span class="hora">12:01</span>
-        </div>
-
-        <div class="balao-whatsapp" style="animation-delay: 1.0s;">
-          <p><strong>Porque, entre tantas pessoas no mundo, eu sou muito feliz por ter encontrado você. ❤️</strong></p>
-          <span class="hora">12:02</span>
-        </div>
-
-        <!-- MENSAGEM OCULTA / SURPRESA DA CONVERSA -->
-        <div class="balao-whatsapp surpresa-balao" id="surpresa">
-          <p>"Você é uma das partes mais bonitas da minha história. E, se depender de mim, ainda temos muitos capítulos incríveis para escrever juntos. ❤️"</p>
-          <span class="hora">12:03 <span class="visto">✓✓</span></span>
-        </div>
-
+      <!-- MENSAGENS DELA/SISTEMA (ESQUERDA - BRANCO) -->
+      <div class="msg msg-recebida" style="animation-delay: 0.2s;">
+        <p>Existem pessoas que aparecem em nossas vidas e, de alguma forma, tornam tudo mais bonito.</p>
+        <span class="hora">14:08</span>
       </div>
 
-      <!-- RODAPÉ E BOTÃO DE INTERAÇÃO -->
-      <footer class="chat-footer">
-        <button class="botao-zap" onclick="mostrarSurpresa()">
-          💌 Clique aqui para uma surpresa
-        </button>
-        <div class="assinatura">
-          Com todo meu carinho, <strong>Gabryel seu amor ❤️</strong>
-        </div>
-      </footer>
+      <div class="msg msg-recebida" style="animation-delay: 0.4s;">
+        <p><strong>Você é uma dessas pessoas. ✨</strong></p>
+        <span class="hora">14:09</span>
+      </div>
 
-    </section>
-  </main>
+      <div class="msg msg-recebida" style="animation-delay: 0.6s;">
+        <p>Talvez eu não consiga encontrar as palavras perfeitas para explicar o quanto você significa para mim. Mas quero que saiba que cada sorriso seu, cada conversa e cada momento ao seu lado se tornou uma lembrança que guardo com muito carinho.</p>
+        <span class="hora">14:11</span>
+      </div>
+
+      <div class="msg msg-recebida" style="animation-delay: 0.8s;">
+        <p>Se eu pudesse fazer um pedido, seria simples: que a vida continue nos dando motivos para sorrir, conversar, sonhar e criar momentos juntos.</p>
+        <span class="hora">14:23</span>
+      </div>
+
+      <!-- SUAS MENSAGENS (DIREITA - VERDE WHATSAPP) -->
+      <div class="msg msg-enviada" style="animation-delay: 1.0s;">
+        <p><strong>Porque, entre tantas pessoas no mundo, eu sou muito feliz por ter encontrado você. ❤️</strong></p>
+        <span class="hora">14:44 <span class="visto">✓✓</span></span>
+      </div>
+
+      <!-- MENSAGEM SURPRESA OCULTA (ENVIADA POR VOZ / SURPRESA) -->
+      <div class="msg msg-enviada surpresa-msg" id="surpresa">
+        <div class="audio-card">
+          <div class="audio-icon">📞</div>
+          <div class="audio-info">
+            <strong>Declaração de amor</strong>
+            <p>"Você é uma das partes mais bonitas da minha história. E, se depender de mim, ainda temos muitos capítulos incríveis para escrever juntos. ❤️"</p>
+          </div>
+        </div>
+        <span class="hora">22:54 <span class="visto">✓✓</span></span>
+      </div>
+
+    </main>
+
+    <!-- BARRA INFERIOR / BOTÃO DE SURPRESA -->
+    <footer class="whatsapp-footer">
+      <button class="btn-surpresa" onclick="mostrarSurpresa()">
+        💌 Clique aqui para ver uma surpresa
+      </button>
+      <div class="assinatura">
+        Com todo meu carinho, <strong>Gabryel seu amor ❤️</strong>
+      </div>
+    </footer>
+
+  </div>
 
   <!-- Link para o JavaScript Externo -->
   <script src="script.js"></script>
