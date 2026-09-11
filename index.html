@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
 
-  <!-- ESSENCIAL PARA CELULAR -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <meta name="theme-color" content="#4b001d">
 
   <title>Para Natália ❤️</title>
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -39,33 +41,52 @@
       overflow-x: hidden;
     }
 
+
     /* =========================
-       CORAÇÕES DO FUNDO
+       FUNDO
     ========================= */
 
     .hearts {
       position: fixed;
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       pointer-events: none;
       overflow: hidden;
+
       z-index: 0;
     }
 
+
+    /* =========================
+       CORAÇÕES
+    ========================= */
+
     .heart {
+
       position: absolute;
+
       bottom: -60px;
+
       color: rgba(255, 130, 170, 0.65);
 
       animation-name: subir;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
+
+      z-index: 0;
     }
 
+
     @keyframes subir {
+
       0% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+          translateY(0)
+          rotate(0deg);
+
         opacity: 0;
       }
 
@@ -74,35 +95,123 @@
       }
 
       100% {
-        transform: translateY(-115vh) rotate(360deg);
+        transform:
+          translateY(-115vh)
+          rotate(360deg);
+
         opacity: 0;
       }
     }
+
+
+    /* =========================
+       FOTOS FLUTUANTES
+    ========================= */
+
+    .floating-photo {
+
+      position: absolute;
+
+      bottom: -180px;
+
+      width: clamp(75px, 14vw, 125px);
+      height: clamp(95px, 18vw, 160px);
+
+      object-fit: cover;
+
+      border-radius: 18px;
+
+      border: 2px solid rgba(255, 220, 230, 0.5);
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        0 0 18px rgba(255, 110, 160, 0.3);
+
+      pointer-events: none;
+
+      opacity: 0;
+
+      animation-name: subirFoto;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+
+      z-index: 0;
+    }
+
+
+    @keyframes subirFoto {
+
+      0% {
+
+        transform:
+          translateY(0)
+          rotate(var(--rotacao-inicial))
+          scale(0.7);
+
+        opacity: 0;
+      }
+
+
+      12% {
+
+        opacity: var(--opacidade);
+      }
+
+
+      50% {
+
+        transform:
+          translateY(-55vh)
+          translateX(var(--movimento))
+          rotate(var(--rotacao-meio))
+          scale(1);
+      }
+
+
+      100% {
+
+        transform:
+          translateY(-125vh)
+          translateX(var(--movimento-final))
+          rotate(var(--rotacao-final))
+          scale(0.85);
+
+        opacity: 0;
+      }
+
+    }
+
 
     /* =========================
        CONTAINER
     ========================= */
 
     .container {
+
       position: relative;
+
       z-index: 1;
 
       width: 100%;
+
       min-height: 100vh;
       min-height: 100dvh;
 
       display: flex;
+
       justify-content: center;
       align-items: center;
 
       padding: 25px 16px;
     }
 
+
     /* =========================
        CARTA
     ========================= */
 
     .card {
+
       width: 100%;
       max-width: 720px;
 
@@ -126,48 +235,77 @@
       animation: aparecer 1.2s ease;
     }
 
+
     @keyframes aparecer {
+
       from {
+
         opacity: 0;
-        transform: translateY(30px);
+
+        transform:
+          translateY(30px);
       }
 
       to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
+
     }
+
 
     /* =========================
        CORAÇÃO PRINCIPAL
     ========================= */
 
     .coracao {
+
       font-size: 70px;
+
       line-height: 1;
 
       margin-bottom: 20px;
 
-      animation: pulsar 1.4s infinite;
-      filter: drop-shadow(0 0 15px rgba(255, 70, 120, 0.7));
+      animation:
+        pulsar 1.4s infinite;
+
+      filter:
+        drop-shadow(
+          0 0 15px
+          rgba(255, 70, 120, 0.7)
+        );
     }
 
+
     @keyframes pulsar {
-      0%, 100% {
-        transform: scale(1);
+
+      0%,
+      100% {
+
+        transform:
+          scale(1);
       }
 
       50% {
-        transform: scale(1.15);
+
+        transform:
+          scale(1.15);
       }
+
     }
+
 
     /* =========================
        TÍTULO
     ========================= */
 
     h1 {
-      font-size: clamp(2.3rem, 8vw, 4.5rem);
+
+      font-size:
+        clamp(2.3rem, 8vw, 4.5rem);
 
       line-height: 1.1;
 
@@ -180,8 +318,11 @@
         0 0 25px rgba(255, 50, 110, 0.4);
     }
 
+
     .subtitulo {
-      font-size: clamp(1rem, 4vw, 1.2rem);
+
+      font-size:
+        clamp(1rem, 4vw, 1.2rem);
 
       line-height: 1.5;
 
@@ -190,11 +331,13 @@
       margin-bottom: 30px;
     }
 
+
     /* =========================
        TEXTO
     ========================= */
 
     .mensagem {
+
       width: 100%;
       max-width: 600px;
 
@@ -202,29 +345,37 @@
 
       text-align: left;
 
-      font-size: clamp(1rem, 4vw, 1.15rem);
+      font-size:
+        clamp(1rem, 4vw, 1.15rem);
 
       line-height: 1.8;
 
       color: #fff5f8;
     }
 
+
     .mensagem p {
+
       margin-bottom: 18px;
     }
 
+
     .mensagem strong {
+
       color: #ff9fbd;
 
       text-shadow:
-        0 0 8px rgba(255, 100, 150, 0.3);
+        0 0 8px
+        rgba(255, 100, 150, 0.3);
     }
+
 
     /* =========================
        BOTÃO
     ========================= */
 
     .botao {
+
       width: 100%;
       max-width: 350px;
 
@@ -233,42 +384,53 @@
       padding: 14px 22px;
 
       border: none;
+
       border-radius: 50px;
 
-      background: linear-gradient(
-        45deg,
-        #ff326d,
-        #ff719d
-      );
+      background:
+        linear-gradient(
+          45deg,
+          #ff326d,
+          #ff719d
+        );
 
       color: white;
 
       font-family: inherit;
 
       font-size: 1rem;
+
       font-weight: bold;
 
       cursor: pointer;
 
       box-shadow:
-        0 10px 30px rgba(255, 50, 110, 0.35);
+        0 10px 30px
+        rgba(255, 50, 110, 0.35);
 
-      transition: transform 0.2s ease,
-                  box-shadow 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
+
 
     .botao:active {
-      transform: scale(0.96);
+
+      transform:
+        scale(0.96);
 
       box-shadow:
-        0 5px 20px rgba(255, 50, 110, 0.4);
+        0 5px 20px
+        rgba(255, 50, 110, 0.4);
     }
+
 
     /* =========================
        SURPRESA
     ========================= */
 
     #surpresa {
+
       display: none;
 
       margin: 28px auto 0;
@@ -279,26 +441,35 @@
 
       border-radius: 20px;
 
-      background: rgba(255, 255, 255, 0.07);
+      background:
+        rgba(255, 255, 255, 0.07);
 
-      border: 1px solid rgba(255, 170, 195, 0.15);
+      border:
+        1px solid
+        rgba(255, 170, 195, 0.15);
 
-      animation: aparecer 0.8s ease;
+      animation:
+        aparecer 0.8s ease;
     }
 
+
     #surpresa p {
-      font-size: clamp(1.05rem, 4vw, 1.3rem);
+
+      font-size:
+        clamp(1.05rem, 4vw, 1.3rem);
 
       line-height: 1.7;
 
       color: #ffe1eb;
     }
 
+
     /* =========================
        ASSINATURA
     ========================= */
 
     .assinatura {
+
       margin-top: 35px;
 
       font-size: 1rem;
@@ -310,17 +481,23 @@
       font-style: italic;
     }
 
+
     .assinatura strong {
-      color: #fff;
+
+      color: white;
     }
 
+
     .data {
+
       margin-top: 12px;
 
-      color: rgba(255, 255, 255, 0.5);
+      color:
+        rgba(255, 255, 255, 0.5);
 
       font-size: 0.85rem;
     }
+
 
     /* =========================
        CELULAR
@@ -329,6 +506,7 @@
     @media (max-width: 600px) {
 
       .container {
+
         align-items: flex-start;
 
         padding:
@@ -337,7 +515,9 @@
           max(25px, env(safe-area-inset-bottom));
       }
 
+
       .card {
+
         margin-top: 10px;
 
         padding: 35px 20px;
@@ -345,46 +525,65 @@
         border-radius: 24px;
       }
 
+
       .coracao {
+
         font-size: 60px;
 
         margin-bottom: 15px;
       }
 
+
       h1 {
-        font-size: clamp(2.2rem, 12vw, 3.3rem);
+
+        font-size:
+          clamp(2.2rem, 12vw, 3.3rem);
 
         word-break: normal;
       }
 
+
       .subtitulo {
+
         margin-bottom: 25px;
       }
 
+
       .mensagem {
+
         font-size: 1rem;
 
         line-height: 1.75;
       }
 
+
       .mensagem p {
+
         margin-bottom: 16px;
       }
 
+
       .botao {
+
         max-width: 100%;
 
         font-size: 0.98rem;
       }
 
+
       #surpresa {
+
         padding: 18px;
       }
 
+
       .assinatura {
+
         margin-top: 30px;
       }
+
     }
+
 
     /* =========================
        TELAS MUITO PEQUENAS
@@ -393,61 +592,94 @@
     @media (max-width: 380px) {
 
       .container {
+
         padding-left: 10px;
         padding-right: 10px;
       }
 
+
       .card {
+
         padding: 30px 17px;
       }
 
+
       .coracao {
+
         font-size: 52px;
       }
 
+
       h1 {
+
         font-size: 2.2rem;
       }
 
+
       .mensagem {
+
         font-size: 0.96rem;
       }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- CORAÇÕES -->
-  <div class="hearts" id="hearts"></div>
 
-  <!-- CONTEÚDO -->
+  <!-- =========================
+       FUNDO COM CORAÇÕES E FOTOS
+  ========================== -->
+
+  <div
+    class="hearts"
+    id="hearts">
+  </div>
+
+
+  <!-- =========================
+       CONTEÚDO
+  ========================== -->
+
   <main class="container">
 
     <section class="card">
+
 
       <div class="coracao">
         ❤️
       </div>
 
+
       <h1>
         Para Natália
       </h1>
+
 
       <p class="subtitulo">
         Uma pequena surpresa para uma pessoa muito especial. 💕
       </p>
 
+
       <div class="mensagem">
+
 
         <p>
           Existem pessoas que aparecem em nossas vidas
           e, de alguma forma, tornam tudo mais bonito.
         </p>
 
+
         <p>
-          <strong>Você é uma dessas pessoas.</strong>
+          <strong>
+            Você é uma dessas pessoas.
+          </strong>
         </p>
+
 
         <p>
           Talvez eu não consiga encontrar as palavras perfeitas
@@ -457,25 +689,33 @@
           se tornou uma lembrança que guardo com muito carinho.
         </p>
 
+
         <p>
           Se eu pudesse fazer um pedido, seria simples:
           que a vida continue nos dando motivos para sorrir,
           conversar, sonhar e criar momentos juntos.
         </p>
 
+
         <p>
           Porque, entre tantas pessoas no mundo,
-          <strong>eu sou muito feliz por ter encontrado você.</strong>
+          <strong>
+            eu sou muito feliz por ter encontrado você.
+          </strong>
         </p>
+
 
       </div>
 
+
       <button
         class="botao"
-        onclick="mostrarSurpresa()"
-      >
+        onclick="mostrarSurpresa()">
+
         💌 Clique aqui para uma surpresa
+
       </button>
+
 
       <div id="surpresa">
 
@@ -489,6 +729,7 @@
 
       </div>
 
+
       <div class="assinatura">
 
         Com todo meu carinho,<br>
@@ -499,9 +740,13 @@
 
       </div>
 
+
       <div class="data">
+
         Feito especialmente para você ✨
+
       </div>
+
 
     </section>
 
@@ -510,29 +755,38 @@
 
   <script>
 
+
     /* =========================
        BOTÃO SURPRESA
-    ========================= */
+    ========================== */
 
     function mostrarSurpresa() {
 
       const surpresa =
         document.getElementById("surpresa");
 
-      if (surpresa.style.display === "block") {
+
+      if (
+        surpresa.style.display === "block"
+      ) {
 
         surpresa.style.display = "none";
 
-      } else {
+      }
+
+      else {
 
         surpresa.style.display = "block";
 
-        // Faz a tela descer suavemente
+
         setTimeout(() => {
 
           surpresa.scrollIntoView({
+
             behavior: "smooth",
+
             block: "center"
+
           });
 
         }, 100);
@@ -544,65 +798,236 @@
 
     /* =========================
        CORAÇÕES FLUTUANTES
-    ========================= */
+    ========================== */
 
     function criarCoracao() {
 
       const container =
         document.getElementById("hearts");
 
+
       const heart =
         document.createElement("div");
 
+
       heart.classList.add("heart");
 
+
       const emojis = [
+
         "❤️",
         "💕",
         "💗",
         "💖",
         "💘"
+
       ];
+
 
       heart.innerHTML =
         emojis[
           Math.floor(
-            Math.random() * emojis.length
+            Math.random() *
+            emojis.length
           )
         ];
+
 
       heart.style.left =
         Math.random() * 100 + "vw";
 
+
       heart.style.fontSize =
         (14 + Math.random() * 22) + "px";
+
 
       heart.style.animationDuration =
         (6 + Math.random() * 7) + "s";
 
+
       container.appendChild(heart);
 
+
       setTimeout(() => {
+
         heart.remove();
+
       }, 14000);
 
     }
 
 
-    // Menos corações no celular
-    // para não pesar o navegador
+    /* =========================
+       FOTOS FLUTUANTES
+    ========================== */
+
+    function criarFotoFlutuante() {
+
+      const container =
+        document.getElementById("hearts");
+
+
+      const foto =
+        document.createElement("img");
+
+
+      foto.classList.add(
+        "floating-photo"
+      );
+
+
+      /*
+        IMPORTANTE PARA O GITHUB:
+
+        Coloque:
+
+        index.html
+        Foto_nossa.jpeg
+
+        na mesma pasta.
+
+        Se colocar a foto em uma pasta
+        chamada "img", use:
+
+        foto.src = "img/Foto_nossa.jpeg";
+      */
+
+      foto.src =
+        "Foto_nossa.jpeg";
+
+
+      foto.alt = "";
+
+
+      foto.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      /* posição horizontal */
+
+      foto.style.left =
+        Math.random() * 92 + "vw";
+
+
+      /* velocidade */
+
+      foto.style.animationDuration =
+        (10 + Math.random() * 8) + "s";
+
+
+      /* rotação inicial */
+
+      foto.style.setProperty(
+        "--rotacao-inicial",
+        (-12 + Math.random() * 24) + "deg"
+      );
+
+
+      /* rotação no meio */
+
+      foto.style.setProperty(
+        "--rotacao-meio",
+        (-8 + Math.random() * 16) + "deg"
+      );
+
+
+      /* rotação final */
+
+      foto.style.setProperty(
+        "--rotacao-final",
+        (-15 + Math.random() * 30) + "deg"
+      );
+
+
+      /* movimento lateral */
+
+      foto.style.setProperty(
+        "--movimento",
+        (-35 + Math.random() * 70) + "px"
+      );
+
+
+      foto.style.setProperty(
+        "--movimento-final",
+        (-70 + Math.random() * 140) + "px"
+      );
+
+
+      /* transparência */
+
+      foto.style.setProperty(
+        "--opacidade",
+        (0.28 + Math.random() * 0.28)
+      );
+
+
+      container.appendChild(foto);
+
+
+      /* remove depois da animação */
+
+      setTimeout(() => {
+
+        foto.remove();
+
+      }, 19000);
+
+    }
+
+
+    /* =========================
+       INTERVALO DOS CORAÇÕES
+    ========================== */
 
     const intervalo =
       window.innerWidth <= 600
         ? 900
         : 500;
 
+
     setInterval(
       criarCoracao,
       intervalo
     );
 
+
+    /* =========================
+       INTERVALO DAS FOTOS
+    ========================== */
+
+    const intervaloFotos =
+      window.innerWidth <= 600
+        ? 5000
+        : 3500;
+
+
+    /*
+      Primeira foto
+      aparece depois de 1,8 segundos.
+    */
+
+    setTimeout(
+      criarFotoFlutuante,
+      1800
+    );
+
+
+    /*
+      Depois continua
+      aparecendo automaticamente.
+    */
+
+    setInterval(
+      criarFotoFlutuante,
+      intervaloFotos
+    );
+
+
   </script>
 
+
 </body>
+
 </html>
