@@ -2,28 +2,52 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para Você ❤️</title>
+
+  <!-- ESSENCIAL PARA CELULAR -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="theme-color" content="#4b001d">
+
+  <title>Para Natália ❤️</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      width: 100%;
+      min-height: 100%;
+      background: #21000d;
     }
 
     body {
+      width: 100%;
       min-height: 100vh;
-      font-family: "Georgia", serif;
-      background: linear-gradient(135deg, #12000a, #4b001d, #9b174c);
+      min-height: 100dvh;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      background:
+        radial-gradient(circle at top, #8b1745 0%, transparent 45%),
+        linear-gradient(135deg, #12000a, #4b001d, #8f1747);
+
       color: white;
       overflow-x: hidden;
     }
 
-    /* Fundo com corações */
+    /* =========================
+       CORAÇÕES DO FUNDO
+    ========================= */
+
     .hearts {
       position: fixed;
       inset: 0;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
       overflow: hidden;
       z-index: 0;
@@ -31,10 +55,12 @@
 
     .heart {
       position: absolute;
-      bottom: -50px;
-      color: rgba(255, 105, 150, 0.7);
-      font-size: 20px;
-      animation: subir linear infinite;
+      bottom: -60px;
+      color: rgba(255, 130, 170, 0.65);
+
+      animation-name: subir;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
     }
 
     @keyframes subir {
@@ -48,41 +74,62 @@
       }
 
       100% {
-        transform: translateY(-110vh) rotate(360deg);
+        transform: translateY(-115vh) rotate(360deg);
         opacity: 0;
       }
     }
 
-    /* Conteúdo */
+    /* =========================
+       CONTAINER
+    ========================= */
+
     .container {
       position: relative;
       z-index: 1;
+
+      width: 100%;
       min-height: 100vh;
+      min-height: 100dvh;
+
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 30px 20px;
+
+      padding: 25px 16px;
     }
+
+    /* =========================
+       CARTA
+    ========================= */
 
     .card {
       width: 100%;
-      max-width: 750px;
-      padding: 50px 35px;
+      max-width: 720px;
+
+      padding: 40px 30px;
+
       text-align: center;
 
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 30px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.09);
 
-      animation: aparecer 1.5s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      border-radius: 28px;
+
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 0 30px rgba(255, 255, 255, 0.03);
+
+      animation: aparecer 1.2s ease;
     }
 
     @keyframes aparecer {
       from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(30px);
       }
 
       to {
@@ -91,10 +138,18 @@
       }
     }
 
+    /* =========================
+       CORAÇÃO PRINCIPAL
+    ========================= */
+
     .coracao {
       font-size: 70px;
-      animation: pulsar 1.3s infinite;
-      margin-bottom: 15px;
+      line-height: 1;
+
+      margin-bottom: 20px;
+
+      animation: pulsar 1.4s infinite;
+      filter: drop-shadow(0 0 15px rgba(255, 70, 120, 0.7));
     }
 
     @keyframes pulsar {
@@ -103,86 +158,259 @@
       }
 
       50% {
-        transform: scale(1.18);
+        transform: scale(1.15);
       }
     }
 
+    /* =========================
+       TÍTULO
+    ========================= */
+
     h1 {
-      font-size: clamp(2.3rem, 7vw, 4.5rem);
-      margin-bottom: 10px;
-      color: #fff;
-      text-shadow: 0 0 20px rgba(255, 100, 150, 0.8);
+      font-size: clamp(2.3rem, 8vw, 4.5rem);
+
+      line-height: 1.1;
+
+      margin-bottom: 14px;
+
+      color: white;
+
+      text-shadow:
+        0 0 10px rgba(255, 100, 150, 0.7),
+        0 0 25px rgba(255, 50, 110, 0.4);
     }
 
     .subtitulo {
-      font-size: 1.2rem;
-      color: #ffc4d6;
-      margin-bottom: 35px;
+      font-size: clamp(1rem, 4vw, 1.2rem);
+
+      line-height: 1.5;
+
+      color: #ffc3d5;
+
+      margin-bottom: 30px;
     }
 
+    /* =========================
+       TEXTO
+    ========================= */
+
     .mensagem {
-      font-size: 1.15rem;
-      line-height: 1.9;
-      color: #fff5f8;
-      text-align: left;
-      margin: 0 auto 35px;
+      width: 100%;
       max-width: 600px;
+
+      margin: 0 auto 30px;
+
+      text-align: left;
+
+      font-size: clamp(1rem, 4vw, 1.15rem);
+
+      line-height: 1.8;
+
+      color: #fff5f8;
+    }
+
+    .mensagem p {
+      margin-bottom: 18px;
     }
 
     .mensagem strong {
       color: #ff9fbd;
+
+      text-shadow:
+        0 0 8px rgba(255, 100, 150, 0.3);
     }
+
+    /* =========================
+       BOTÃO
+    ========================= */
 
     .botao {
+      width: 100%;
+      max-width: 350px;
+
+      min-height: 54px;
+
+      padding: 14px 22px;
+
       border: none;
-      padding: 15px 30px;
       border-radius: 50px;
-      background: linear-gradient(45deg, #ff3d75, #ff719d);
+
+      background: linear-gradient(
+        45deg,
+        #ff326d,
+        #ff719d
+      );
+
       color: white;
+
+      font-family: inherit;
+
       font-size: 1rem;
       font-weight: bold;
+
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(255, 50, 110, 0.35);
-      transition: 0.3s;
+
+      box-shadow:
+        0 10px 30px rgba(255, 50, 110, 0.35);
+
+      transition: transform 0.2s ease,
+                  box-shadow 0.2s ease;
     }
 
-    .botao:hover {
-      transform: scale(1.07);
-      box-shadow: 0 15px 40px rgba(255, 50, 110, 0.55);
+    .botao:active {
+      transform: scale(0.96);
+
+      box-shadow:
+        0 5px 20px rgba(255, 50, 110, 0.4);
     }
+
+    /* =========================
+       SURPRESA
+    ========================= */
 
     #surpresa {
       display: none;
-      margin-top: 30px;
-      animation: aparecer 1s ease;
+
+      margin: 28px auto 0;
+
+      padding: 22px;
+
+      max-width: 580px;
+
+      border-radius: 20px;
+
+      background: rgba(255, 255, 255, 0.07);
+
+      border: 1px solid rgba(255, 170, 195, 0.15);
+
+      animation: aparecer 0.8s ease;
     }
 
     #surpresa p {
-      font-size: 1.3rem;
-      line-height: 1.8;
+      font-size: clamp(1.05rem, 4vw, 1.3rem);
+
+      line-height: 1.7;
+
       color: #ffe1eb;
     }
 
+    /* =========================
+       ASSINATURA
+    ========================= */
+
     .assinatura {
-      margin-top: 40px;
-      font-size: 1.1rem;
+      margin-top: 35px;
+
+      font-size: 1rem;
+
+      line-height: 1.7;
+
       color: #ffb6cb;
+
       font-style: italic;
     }
 
-    .data {
-      margin-top: 10px;
-      color: rgba(255,255,255,0.55);
-      font-size: 0.9rem;
+    .assinatura strong {
+      color: #fff;
     }
 
+    .data {
+      margin-top: 12px;
+
+      color: rgba(255, 255, 255, 0.5);
+
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       CELULAR
+    ========================= */
+
     @media (max-width: 600px) {
+
+      .container {
+        align-items: flex-start;
+
+        padding:
+          max(20px, env(safe-area-inset-top))
+          14px
+          max(25px, env(safe-area-inset-bottom));
+      }
+
       .card {
-        padding: 40px 22px;
+        margin-top: 10px;
+
+        padding: 35px 20px;
+
+        border-radius: 24px;
+      }
+
+      .coracao {
+        font-size: 60px;
+
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 12vw, 3.3rem);
+
+        word-break: normal;
+      }
+
+      .subtitulo {
+        margin-bottom: 25px;
       }
 
       .mensagem {
-        font-size: 1.05rem;
+        font-size: 1rem;
+
+        line-height: 1.75;
+      }
+
+      .mensagem p {
+        margin-bottom: 16px;
+      }
+
+      .botao {
+        max-width: 100%;
+
+        font-size: 0.98rem;
+      }
+
+      #surpresa {
+        padding: 18px;
+      }
+
+      .assinatura {
+        margin-top: 30px;
+      }
+    }
+
+    /* =========================
+       TELAS MUITO PEQUENAS
+    ========================= */
+
+    @media (max-width: 380px) {
+
+      .container {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .card {
+        padding: 30px 17px;
+      }
+
+      .coracao {
+        font-size: 52px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .mensagem {
+        font-size: 0.96rem;
       }
     }
   </style>
@@ -190,33 +418,36 @@
 
 <body>
 
+  <!-- CORAÇÕES -->
   <div class="hearts" id="hearts"></div>
 
+  <!-- CONTEÚDO -->
   <main class="container">
+
     <section class="card">
 
-      <div class="coracao">❤️</div>
+      <div class="coracao">
+        ❤️
+      </div>
 
-      <!-- MUDE O NOME AQUI -->
-      <h1>Para, Meu Amor</h1>
+      <h1>
+        Para Natália
+      </h1>
 
       <p class="subtitulo">
-        Uma pequena surpresa para uma pessoa muito especial.
+        Uma pequena surpresa para uma pessoa muito especial. 💕
       </p>
 
       <div class="mensagem">
-        <p>
-          Existem pessoas que aparecem em nossas vidas e,
-          de alguma forma, tornam tudo mais bonito.
-        </p>
 
-        <br>
+        <p>
+          Existem pessoas que aparecem em nossas vidas
+          e, de alguma forma, tornam tudo mais bonito.
+        </p>
 
         <p>
           <strong>Você é uma dessas pessoas.</strong>
         </p>
-
-        <br>
 
         <p>
           Talvez eu não consiga encontrar as palavras perfeitas
@@ -226,37 +457,46 @@
           se tornou uma lembrança que guardo com muito carinho.
         </p>
 
-        <br>
-
         <p>
           Se eu pudesse fazer um pedido, seria simples:
           que a vida continue nos dando motivos para sorrir,
           conversar, sonhar e criar momentos juntos.
         </p>
 
-        <br>
-
         <p>
           Porque, entre tantas pessoas no mundo,
           <strong>eu sou muito feliz por ter encontrado você.</strong>
         </p>
+
       </div>
 
-      <button class="botao" onclick="mostrarSurpresa()">
+      <button
+        class="botao"
+        onclick="mostrarSurpresa()"
+      >
         💌 Clique aqui para uma surpresa
       </button>
 
       <div id="surpresa">
+
         <p>
-          "Você é uma das partes mais bonitas da minha história.
-          E, se depender de mim, ainda temos muitos capítulos
-          incríveis para escrever juntos. ❤️"
+          "Você é uma das partes mais bonitas
+          da minha história.
+          E, se depender de mim, ainda temos
+          muitos capítulos incríveis
+          para escrever juntos. ❤️"
         </p>
+
       </div>
 
       <div class="assinatura">
+
         Com todo meu carinho,<br>
-        <strong>Seu Admirador ❤️</strong>
+
+        <strong>
+          Seu Admirador ❤️
+        </strong>
+
       </div>
 
       <div class="data">
@@ -264,39 +504,104 @@
       </div>
 
     </section>
+
   </main>
 
+
   <script>
+
+    /* =========================
+       BOTÃO SURPRESA
+    ========================= */
+
     function mostrarSurpresa() {
-      const surpresa = document.getElementById("surpresa");
+
+      const surpresa =
+        document.getElementById("surpresa");
 
       if (surpresa.style.display === "block") {
+
         surpresa.style.display = "none";
+
       } else {
+
         surpresa.style.display = "block";
+
+        // Faz a tela descer suavemente
+        setTimeout(() => {
+
+          surpresa.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+        }, 100);
+
       }
+
     }
 
-    // Criar corações flutuando
+
+    /* =========================
+       CORAÇÕES FLUTUANTES
+    ========================= */
+
     function criarCoracao() {
-      const container = document.getElementById("hearts");
-      const heart = document.createElement("div");
+
+      const container =
+        document.getElementById("hearts");
+
+      const heart =
+        document.createElement("div");
 
       heart.classList.add("heart");
-      heart.innerHTML = ["❤️", "💕", "💗", "💖", "💘"][Math.floor(Math.random() * 5)];
 
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (15 + Math.random() * 25) + "px";
-      heart.style.animationDuration = (5 + Math.random() * 7) + "s";
+      const emojis = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘"
+      ];
+
+      heart.innerHTML =
+        emojis[
+          Math.floor(
+            Math.random() * emojis.length
+          )
+        ];
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (14 + Math.random() * 22) + "px";
+
+      heart.style.animationDuration =
+        (6 + Math.random() * 7) + "s";
 
       container.appendChild(heart);
 
       setTimeout(() => {
         heart.remove();
-      }, 12000);
+      }, 14000);
+
     }
 
-    setInterval(criarCoracao, 500);
+
+    // Menos corações no celular
+    // para não pesar o navegador
+
+    const intervalo =
+      window.innerWidth <= 600
+        ? 900
+        : 500;
+
+    setInterval(
+      criarCoracao,
+      intervalo
+    );
+
   </script>
 
 </body>
