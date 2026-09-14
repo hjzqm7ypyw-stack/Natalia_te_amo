@@ -504,12 +504,20 @@
     /* =========================
        FOTOS FLUTUANTES
     ========================== */
+    const fotosAdicionais = [
+      "Foto_nossa.jpeg",
+      "Foto_Nossa2.jpeg",
+      "Foto_Nossa3.jpeg",
+      "Foto_Nossa4.jpeg",
+      "Foto_Nossa5.jpeg"
+    ];
+
     function criarFotoFlutuante() {
       const container = document.getElementById("hearts");
       const foto = document.createElement("img");
 
       foto.classList.add("floating-photo");
-      foto.src = "Foto_nossa.jpeg";
+      foto.src = fotosAdicionais[Math.floor(Math.random() * fotosAdicionais.length)];
       foto.alt = "";
       foto.setAttribute("aria-hidden", "true");
 
